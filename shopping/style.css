@@ -81,6 +81,7 @@ body {
   height: 60%;
   list-style: none;
   padding-left: 0;
+  /* item안에서만 y축으로 scroll이 됨 */
   overflow-y: scroll;
 }
 
