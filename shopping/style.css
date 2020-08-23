@@ -64,7 +64,7 @@ body {
   padding: calc(var(--base-space) * 2);
   border-radius: 4px;
 }
-.bleu {
+.blue {
   background-color: var(--color-blue);
 }
 
