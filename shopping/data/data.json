@@ -27,6 +27,27 @@
       "size": "large",
       "color": "pink",
       "image": "../img/pink_s.png"
+    },
+    {
+      "type": "skirt",
+      "gender": "female",
+      "size": "small",
+      "color": "yellow",
+      "image": "../img/yellow_s.png"
+    },
+    {
+      "type": "pants",
+      "gender": "female",
+      "size": "large",
+      "color": "pink",
+      "image": "../img/pink_p.png"
+    },
+    {
+      "type": "tshirt",
+      "gender": "male",
+      "size": "large",
+      "color": "blue",
+      "image": "../img/blue_t.png"
     }
   ]
 }
