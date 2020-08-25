@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coordinate</title>
+    <title>Coordinate Scroll</title>
     <style>
       body {
         background-color: black;
@@ -17,9 +17,19 @@
       .color {
         background-color: yellow;
       }
+      aside {
+        position: fixed;
+        right: 30px;
+        top: 20px;
+      }
     </style>
   </head>
   <body>
+    <aside>
+      <button class="scrollBy100">Scroll by 100px(y)</button>
+      <button class="scrollTo100">Scroll to 100px(y)</button>
+      <button class="scrollIntoColor">Scroll into colorBox</button>
+    </aside>
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
@@ -27,6 +37,9 @@
     <div class="box"></div>
     <div class="box"></div>
     <div class="box color"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
 
@@ -39,6 +52,20 @@
         // 마우스 클릭스 마우스를 클릭한 위치
         console.log(`client: ${event.clientX}, ${event.clientY}`);
         console.log(`page: ${event.pageX}, ${event.pageY}`);
+      });
+
+      const scrollBy100 = document.querySelector(".scrollBy100");
+      const scrollTo100 = document.querySelector(".scrollTo100");
+      const scrollIntoColor = document.querySelector(".scrollIntoColor");
+
+      scrollBy100.addEventListener("click", (event) => {
+        window.scrollBy({ top: 100, left: 0, behavior: "smooth" }); //현재 위치를 기준으로 이동
+      });
+      scrollTo100.addEventListener("click", (event) => {
+        window.scrollTo(0, 100); // 왼쪽 모서리 기준
+      });
+      scrollIntoColor.addEventListener("click", (event) => {
+        colorBox.scrollIntoView();
       });
     </script>
   </body>
