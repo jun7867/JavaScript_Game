@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinate</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: blanchedalmond;
+        border: 1px solid black;
+      }
+      .color {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box color"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      const colorBox = document.querySelector(".color");
+      colorBoxRect = colorBox.getBoundingClientRect();
+      colorBox.addEventListener("click", (event) => {
+        //박스의 top,left..등등
+        console.log(colorBoxRect);
+        // 마우스 클릭스 마우스를 클릭한 위치
+        console.log(`client: ${event.clientX}, ${event.clientY}`);
+        console.log(`page: ${event.pageX}, ${event.pageY}`);
+      });
+    </script>
+  </body>
+</html>
