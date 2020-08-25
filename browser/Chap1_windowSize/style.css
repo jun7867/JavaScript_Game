@@ -1,0 +1,12 @@
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.wrapper {
+  width: 700px;
+  font-size: 30px;
+  padding: 16px;
+  margin-top: 16px;
+  background-color: thistle;
+}
