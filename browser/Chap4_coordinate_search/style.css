@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+}
+.line {
+  position: absolute;
+  background-color: white;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+}
+
+.vertical {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+}
+.target {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 이미지 요소의 x,y의 절반만큼 왼쪽 위로 이동하면 가운데로 간다.  */
+  transform: translate(-50%, -50%);
+}
+
+.tag {
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(20px, 20px);
+}
