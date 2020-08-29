@@ -32,6 +32,9 @@ body {
     rgba(237, 164, 250, 1) 30%,
     rgba(228, 226, 251, 1) 92%
   );
+  -webkit-box-shadow: 5px 7px 5px 0px rgba(82, 80, 82, 1);
+  -moz-box-shadow: 5px 7px 5px 0px rgba(82, 80, 82, 1);
+  box-shadow: 5px 7px 5px 0px rgba(82, 80, 82, 1);
 }
 
 .header {
