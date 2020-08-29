@@ -12,20 +12,25 @@
     <script src="src/main.js" defer></script>
   </head>
   <body>
-    <div class="backWrapper">
-      <div class="listBox">
-        <div class="top">
-          <p class="title">Shopping List</p>
-        </div>
+    <section class="listBox">
+      <header class="header">Shopping List</header>
 
-        <ul class="items"></ul>
-        <form>
-          <input type="text" name="name" />
-        </form>
-        <div class="bottom">
-          <i class="fas fa-plus-circle"></i>
-        </div>
-      </div>
-    </div>
+      <ul class="items">
+        <li>
+          <div class="items__li">
+            <span class="item__name">우유</span>
+            <button class="item__delete"><i class="fas fa-trash"></i></button>
+          </div>
+          <div class="item__divider"></div>
+        </li>
+      </ul>
+
+      <footer class="footer">
+        <input type="text" class="footer__input" />
+        <button class="footer__add">
+          <i class="fas fa-plus"></i>
+        </button>
+      </footer>
+    </section>
   </body>
 </html>
