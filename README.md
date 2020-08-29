@@ -43,6 +43,6 @@ Vanilla JavaScript를 이용한 여러가지 게임 구현
 
 ### 2. item list에서 삭제 버튼을 눌렀을 경우 List에서 삭제
   ![image](https://user-images.githubusercontent.com/36908476/91638604-a3d03700-ea4b-11ea-810c-f530d5e9818d.png)
-![image](https://user-images.githubusercontent.com/36908476/91638608-a7fc5480-ea4b-11ea-8df8-b2bd0b7aaca2.png)
+![image](https://user-images.githubusercontent.com/36908476/91638627-c3675f80-ea4b-11ea-8c53-2a6b21ff148a.png)
 
 </details>
