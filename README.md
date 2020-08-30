@@ -23,3 +23,26 @@ Vanilla JavaScript를 이용한 여러가지 게임 구현
 ![image](https://user-images.githubusercontent.com/36908476/90984182-5c126100-e5ae-11ea-9e31-518915a89833.png)
   
 </details>
+
+
+## 2. Shopping List
+
+<details>
+    <summary>자세히 펼쳐보기</summary>
+  
+## Stack
+-HTML, CSS, Vanilla JS
+
+## 기간
+-2020.8.28 ~ 2020.8.29
+
+## 주요 기능
+
+### 1. 입력창에 엔터키 혹은 플러스 버튼을 클릭했을 때 item list에 추가
+![image](https://user-images.githubusercontent.com/36908476/91638592-8c914980-ea4b-11ea-96ad-4a2429d32971.png)
+
+### 2. item list에서 삭제 버튼을 눌렀을 경우 List에서 삭제
+  ![image](https://user-images.githubusercontent.com/36908476/91638604-a3d03700-ea4b-11ea-810c-f530d5e9818d.png)
+![image](https://user-images.githubusercontent.com/36908476/91638627-c3675f80-ea4b-11ea-8c53-2a6b21ff148a.png)
+
+</details>
