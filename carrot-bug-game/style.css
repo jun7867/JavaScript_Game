@@ -58,6 +58,7 @@ button {
   padding: 5px 15px;
   border-radius: 10%;
   margin-bottom: 10px;
+  visibility: hidden;
 }
 
 .game__score {
@@ -70,6 +71,7 @@ button {
   color: white;
   text-align: center;
   border: 2.5px solid black;
+  visibility: hidden;
 }
 
 .game__field {
