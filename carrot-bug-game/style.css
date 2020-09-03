@@ -58,6 +58,8 @@ button {
   padding: 5px 15px;
   border-radius: 10%;
   margin-bottom: 10px;
+  user-select: none;
+  cursor: auto;
   visibility: hidden;
 }
 
@@ -67,11 +69,14 @@ button {
   height: 50px;
   border-radius: 50%;
   font-weight: 600;
-  font-size: 42px;
+  margin-top: 8px;
+  font-size: 34px;
   color: white;
   text-align: center;
   border: 2.5px solid black;
   visibility: hidden;
+  user-select: none;
+  cursor: auto;
 }
 
 .game__field {
@@ -109,4 +114,13 @@ button {
 .pop-up__message {
   font-size: 45px;
   color: white;
+}
+
+.carrot,
+.bug {
+  transition: all 100ms ease-in;
+}
+.carrot:hover,
+.bug:hover {
+  transform: scale(1.1);
 }
