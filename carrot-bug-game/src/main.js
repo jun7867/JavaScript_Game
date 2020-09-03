@@ -12,6 +12,12 @@ const popUp = document.querySelector(".pop-up--hide");
 const popUpText = document.querySelector(".pop-up__message");
 const popUpReplay = document.querySelector(".pop-up__replay");
 
+const carrotSound = new Audio("./sound/carrot_pull.mp3");
+const alertSound = new Audio("./sound/alert.wav");
+const bgSound = new Audio("./sound/bg.mp3");
+const bugSound = new Audio("./sound/bug_pull.mp3");
+const winSound = new Audio("./sound/game_win.mp3");
+
 let started = false;
 let score = 0;
 let timer = undefined;
@@ -19,14 +25,16 @@ const GAME_DURATION = 5;
 
 function startGame() {
   started = true;
+  score = 0;
   field.innerHTML = "";
   gameScore.innerText = CARROT_COUNT;
-  score = 0;
+
   addItem("carrot", CARROT_COUNT, "img/carrot.png");
   addItem("bug", BUG_COUNT, "img/bug.png");
   showStopButton();
   showTimerAndScore();
   startGameTimer();
+  playSound(bgSound);
 }
 
 function randomNumber(min, max) {
@@ -83,6 +91,8 @@ function stopGame() {
   clearInterval(timer);
   startBtn.style.visibility = "hidden";
   showPopUpWithText("Replay ??");
+  playSound(alertSound);
+  stopSound(bgSound);
 }
 function showPopUpWithText(text) {
   popUpText.innerText = text;
@@ -96,14 +106,23 @@ function onFieldClick(event) {
   if (target.matches(".carrot")) {
     target.remove();
     score++;
+    playSound(carrotSound);
     updateScoreBoard();
     if (score === CARROT_COUNT) {
       finishGame(true);
     }
   } else if (target.matches(".bug")) {
-    clearInterval(timer);
     finishGame(false);
   }
+}
+
+function playSound(sound) {
+  sound.currentTime = 0;
+  sound.play();
+}
+
+function stopSound(sound) {
+  sound.pause();
 }
 
 function updateScoreBoard() {
@@ -113,7 +132,14 @@ function updateScoreBoard() {
 
 function finishGame(win) {
   started = false;
-  // hideGameButton();
+  startBtn.style.visibility = "hidden";
+  if (win) {
+    playSound(winSound);
+  } else {
+    playSound(bugSound);
+  }
+  clearInterval(timer);
+  stopSound(bgSound);
   showPopUpWithText(win ? "You WON !" : "YOU LOST !");
 }
 
