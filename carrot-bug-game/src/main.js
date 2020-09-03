@@ -11,6 +11,8 @@ const gameTimer = document.querySelector(".game__timer");
 let started = false;
 let score = 0;
 let timer = undefined;
+const GAME_DURATION = 10;
+// const time_interval;
 
 function stayCarrot() {}
 
@@ -54,8 +56,25 @@ function showTimerAndScore() {
   gameScore.style.visibility = "visible";
   gameTimer.style.visibility = "visible";
 }
-function startGameTimer() {}
-function stopGame() {}
+function startGameTimer() {
+  let remainingTimeSec = GAME_DURATION;
+  updateTimeText(remainingTimeSec);
+  timer = setInterval(function () {
+    if (remainingTimeSec <= 0) {
+      clearInterval(timer);
+      return;
+    }
+    updateTimeText(--remainingTimeSec);
+  }, 1000);
+}
+function updateTimeText(sec) {
+  const minutes = Math.floor(sec / 60);
+  const seconds = sec % 60;
+  gameTimer.textContent = `${minutes}:${seconds}`;
+}
+function stopGame() {
+  clearInterval(timer);
+}
 
 function init() {
   startBtn.addEventListener("click", () => {
