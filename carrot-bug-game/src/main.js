@@ -8,6 +8,10 @@ const startBtn = document.querySelector(".game__button");
 const gameScore = document.querySelector(".game__score");
 const gameTimer = document.querySelector(".game__timer");
 
+const popUp = document.querySelector(".pop-up--hide");
+const popUpText = document.querySelector(".pop-up__message");
+const popUpReplay = document.querySelector(".pop-up__replay");
+
 let started = false;
 let score = 0;
 let timer = undefined;
@@ -74,8 +78,14 @@ function updateTimeText(sec) {
 }
 function stopGame() {
   clearInterval(timer);
+  startBtn.style.visibility = "hidden";
+  showPopUpWithText("Replay ??");
 }
-
+function showPopUpWithText(text) {
+  popUpText.innerText = text;
+  popUp.classList.replace("pop-up--hide", "pop-up");
+  // popUp.classList.add("pop-up");
+}
 function init() {
   startBtn.addEventListener("click", () => {
     if (started) {
