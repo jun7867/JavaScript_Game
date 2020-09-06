@@ -7,7 +7,7 @@ export default class PopUp {
     this.popUpReplay = document.querySelector(".pop-up__replay");
     this.popUpReplay.addEventListener("click", () => {
       this.onClick && this.onClick(); //onClick이 있을 때만 실행.
-      hide();
+      this.hide();
     });
   }
   // 이 class를 할당한 객체에서 onClick이 들어오면 this.onClick에 저장.
