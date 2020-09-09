@@ -1,11 +1,10 @@
 "use strict";
-
 import * as sound from "./sound.js";
 import Field from "./field.js";
 
 export const Reason = Object.freeze({
   win: "win",
-  lost: "lose",
+  lose: "lose",
   cancel: "cancel",
 });
 
@@ -43,7 +42,7 @@ class Game {
 
     this.startBtn.addEventListener("click", () => {
       if (this.started) {
-        this.stop();
+        this.stop(Reason.cancel);
       } else {
         this.start();
       }
@@ -74,27 +73,12 @@ class Game {
 
     this.startBtn.style.visibility = "visible";
   }
-  stop() {
+  stop(reason) {
     this.started = false;
     clearInterval(this.timer);
     this.startBtn.style.visibility = "hidden";
-    sound.playAlert();
     sound.stopBackground();
-    this.onGameStop && this.onGameStop(Reason.cancel);
-  }
-
-  finish(win) {
-    this.started = false;
-    this.startBtn.style.visibility = "hidden";
-    if (win) {
-      sound.playWin();
-    } else {
-      sound.playBackground();
-    }
-    clearInterval(this.timer);
-    sound.stopBackground();
-
-    this.onGameStop && this.onGameStop(win ? Reason.win : Reason.lose);
+    this.onGameStop && this.onGameStop(reason);
   }
 
   onItemClick = (item) => {
@@ -105,11 +89,10 @@ class Game {
       this.score++;
       this.updateScoreBoard();
       if (this.score === this.carrotCount) {
-        this.finish(true);
+        this.stop(Reason.win);
       }
     } else if (item === "bug") {
-      sound.playBug();
-      this.finish(false);
+      this.stop(Reason.lose);
     }
   };
 
@@ -129,7 +112,7 @@ class Game {
     this.timer = setInterval(() => {
       if (remainingTimeSec <= 0) {
         clearInterval(this.timer);
-        this.finish(this.carrotCount === this.score);
+        this.stop(this.carrotCount === this.score ? Reason.win : Reason.lose);
         return;
       }
       this.updateTimeText(--remainingTimeSec);
