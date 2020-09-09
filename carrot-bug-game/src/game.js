@@ -3,7 +3,30 @@
 import * as sound from "./sound.js";
 import Field from "./field.js";
 
-export default class Game {
+//Builder Pattern
+export default class GameBuilder {
+  gameDuration(duration) {
+    this.gameDuration = duration;
+    return this;
+  }
+  carrotCount(num) {
+    this.carrotCount = num;
+    return this;
+  }
+  bugCount(num) {
+    this.bugCount = num;
+    return this;
+  }
+  build() {
+    return new Game(
+      this.gameDuration, //
+      this.carrotCount, //
+      this.bugCount
+    );
+  }
+}
+
+class Game {
   constructor(gameDuration, carrotCount, bugCount) {
     this.gameDuration = gameDuration;
     this.carrotCount = carrotCount;
@@ -49,7 +72,6 @@ export default class Game {
     this.started = false;
     clearInterval(this.timer);
     this.startBtn.style.visibility = "hidden";
-    // this.gameFinishBanner.showWithText("Replay ?");
     sound.playAlert();
     sound.stopBackground();
     this.onGameStop && this.onGameStop("cancle");
@@ -59,13 +81,12 @@ export default class Game {
     this.started = false;
     this.startBtn.style.visibility = "hidden";
     if (win) {
-      sound.playWin;
+      sound.playWin();
     } else {
-      sound.playBackground;
+      sound.playBackground();
     }
     clearInterval(this.timer);
     sound.stopBackground();
-    // this.gameFinishBanner.showWithText(win ? "YOU WON! " : "YOU LOST !");
 
     this.onGameStop && this.onGameStop(win ? "win" : "lose");
   }
@@ -81,6 +102,7 @@ export default class Game {
         this.finish(true);
       }
     } else if (item === "bug") {
+      sound.playBug();
       this.finish(false);
     }
   };
