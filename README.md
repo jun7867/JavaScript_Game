@@ -22,7 +22,7 @@ Vanilla JavaScript를 이용한 여러가지 게임 구현
 ![image](https://user-images.githubusercontent.com/36908476/92998412-a4d98c00-f554-11ea-9ba0-2289cf606cc5.png)
 
 ### 3. Carrot, Bug Click Event.
-
+![image](https://user-images.githubusercontent.com/36908476/92998467-dd796580-f554-11ea-9ca2-27b8525d6fba.png)
 ### 4. 상황별 Sound 추가
 
 </details>
