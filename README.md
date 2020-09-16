@@ -6,7 +6,9 @@ Vanilla JavaScript를 이용한 여러가지 게임 구현
 
 <details>
     <summary>자세히 펼쳐보기</summary>
-  
+
+## URL
+https://jun7867.github.io/JavaScript_Game/carrot-bug-game/
 ## Stack
 -HTML, CSS, Vanilla JS
 
