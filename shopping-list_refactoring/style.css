@@ -1,3 +1,41 @@
+:root {
+  /* color */
+  --color-background: #f0effc;
+  --color-main: #37384f;
+  --color-beige: lightgray;
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #c0c0c09f;
+  --color-blue: #73aace;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+
+  /* font-size */
+  --font-large: 3rem;
+  --font-medium: 1.75rem;
+  --font-regular: 1.125rem;
+  --font-small: 1rem;
+  --font-micro: 0.875rem;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* size & space */
+  --border-radius: 10px;
+  --padding-space: 20px;
+
+  /* animation duration */
+  --animation-duration: 300ms;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -21,24 +59,110 @@ body {
   align-items: center;
 }
 
+.container {
+  width: 500px;
+  height: 800px;
+  border-radius: 10px;
+  background-color: var(--color-light-white);
+  box-shadow: -60px 50px 50px -90px #000000, 60px 50px 50px -90px #000000;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/* curve styling */
+.box {
+  width: 100%;
+  height: 250px;
+  background-color: #37384f;
+  -webkit-mask: radial-gradient(var(--r1, 100%) var(--r2, 50%) at top, white 79.5%, transparent 80%) top left,
+    radial-gradient(var(--r1, 100%) var(--r2, 50%) at bottom, transparent 79.5%, white 80%) top center, radial-gradient(var(--r1, 100%) var(--r2, 50%) at top, white 79.5%, transparent 80%) top right;
+  mask: radial-gradient(var(--r1, 100%) var(--r2, 50%) at top, white 79.5%, transparent 80%) top left,
+    radial-gradient(var(--r1, 100%) var(--r2, 50%) at bottom, transparent 79.5%, white 80%) top center, radial-gradient(var(--r1, 100%) var(--r2, 50%) at top, white 79.5%, transparent 80%) top right;
+  /* adjust the 150% to control the covered area, the bigger the value the bigger the area will be*/
+  -webkit-mask-size: 33.4% 150%;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 33.4% 150%;
+  mask-repeat: no-repeat;
+}
+
+.button {
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: var(--font-regular);
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-main);
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  padding: var(--padding-space);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+.bell {
+  transition: all var(--animation-duration) ease;
+}
+.bell:hover {
+  color: var(--color-yellow);
+  text-shadow: 0px 10px 20px rgba(245, 236, 183, 0.72);
+}
+.widget {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  padding: var(--padding-space);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.date__day {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+}
+.date {
+  font-size: var(--font-medium);
+}
+.day {
+  font-size: var(--font-micro);
+  color: var(--color-light-grey);
+}
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.fa-cloud-sun {
+  font-size: var(--font-medium);
+  margin-bottom: calc(var(--padding-space) / 3);
+}
+.fa-bars {
+  font-size: calc(var(--font-regular) * 1.4);
+}
+.temperate {
+  font-size: var(--font-micro);
+  color: var(--color-light-grey);
+}
 .listBox {
-  width: 320px;
-  height: 570px;
+  width: 420px;
+  height: 600px;
   border: 1px solid black;
-  border-radius: 8%;
-  background: rgb(237, 164, 250);
-  background: linear-gradient(
-    124deg,
-    rgba(237, 164, 250, 1) 30%,
-    rgba(228, 226, 251, 1) 92%
-  );
-  -webkit-box-shadow: 5px 7px 5px 0px rgba(82, 80, 82, 1);
-  -moz-box-shadow: 5px 7px 5px 0px rgba(82, 80, 82, 1);
-  box-shadow: 5px 7px 5px 0px rgba(82, 80, 82, 1);
+  border-radius: 15px;
+  margin-bottom: 30px;
 }
 
 .header {
-  color: white;
+  color: var(--color-main);
   /* height: 48px; */
   font-size: 24px;
   font-weight: 700;
@@ -57,6 +181,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px 28px;
+  color: var(--color-main);
 }
 
 .item__divider {

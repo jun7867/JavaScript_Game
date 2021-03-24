@@ -12,17 +12,38 @@
     <script src="src/main.js" defer></script>
   </head>
   <body>
-    <section class="listBox">
-      <header class="header">Shopping List</header>
+    <div class="container">
+       <!-- curve styling -->
+       <div class="box" style="--r1: 160%; --r2: 68.15%">
+         <!-- nav -->
+        <nav class="nav">
+          <button class="button bar"><i class="fas fa-bars"></i></button>
+          <span class="nav__subject">Memo</span>
+          <button class="button bell"><i class="far fa-bell"></i></button>
+        </nav>
 
-      <ul class="items"></ul>
-
-      <footer class="footer">
-        <input type="text" class="footer__input" />
-        <button class="footer__add">
-          <i class="fas fa-plus"></i>
-        </button>
-      </footer>
-    </section>
+        <!-- widget -->
+        <section class="widget">
+          <div class="date__day">
+            <span class="date">3.26</span>
+            <span class="day">monday</span>
+          </div>
+          <div class="weather">
+            <span><i class="fas fa-cloud-sun"></i></span>
+            <span class="temperate">15'C ~ 20'C</span>
+          </div>
+        </section>
+      </div>
+      <section class="listBox">
+        <header class="header">Shopping List</header>
+        <ul class="items"></ul>
+        <footer class="footer">
+          <input type="text" class="footer__input" />
+          <button class="footer__add">
+            <i class="fas fa-plus"></i>
+          </button>
+        </footer>
+      </section>
+    </div>
   </body>
 </html>
